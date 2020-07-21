@@ -1,0 +1,187 @@
+@font-face {
+  font-family: Helvetica Neue;
+  src: url(../fonts/HelveticaNeue.ttf);
+}
+
+@font-face {
+  font-family: You are loved;
+  src: url(../fonts/YouAreLoved.ttf);
+}
+
+:root {
+  --cta-height: 1333px;
+  --cta-width: 2000px;
+  --clef-height: calc(79px * 0.8);
+  --clef-width: calc(86px * 0.8);
+  --logo-height: calc(193px / 2);
+  --logo-width: calc(320px / 2);
+  --gutter-size: auto;
+  --header-height: var(--logo-height);
+  --subtitle-height: 15rem;
+  --footer-height: 2rem;
+}
+
+body {
+  font-family: "Helvetica Neue";
+  font-size: 24px;
+  display: grid;
+  margin: 0;
+  padding: 0;
+
+  grid-template-columns:
+    [page-start] var(--gutter-size) [content-start] 50% [content-end] var(
+      --gutter-size
+    )
+    [page-end];
+
+  grid-template-rows:
+    [menu-start] var(--header-height) [menu-end] var(--subtitle-height) [subtitle-end] auto [footer-start] var(
+      --footer-height
+    )
+    [footer-end];
+}
+
+p {
+  line-height: 2.7rem;
+  margin: 0.3rem 0 1rem 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 3rem;
+  height: var(--clef-height);
+  vertical-align: middle;
+  font-family: "You are loved";
+  font-weight: normal;
+  background-image: url(../images/clef.jpg);
+  background-size: var(--clef-height);
+  background-position: left 6px;
+  background-repeat: no-repeat;
+  margin: 3rem 0 1rem 0;
+  padding: 0 0 0 calc(var(--clef-width) + 0.5rem);
+}
+
+header {
+  overflow: hidden;
+  flex-direction: row;
+  grid-row-start: menu-start;
+  grid-row-end: menu-end;
+  grid-column-start: page-start;
+  grid-column-end: page-end;
+  box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 0 var(--logo-width);
+}
+
+header nav ul li {
+  list-style: none;
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+header h1 {
+  width: var(--logo-width);
+  height: var(--logo-height);
+  background: white url(../images/TSB-Block.jpg) left top/100% no-repeat;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#subtitle {
+  grid-column-start: page-start;
+  grid-column-end: page-end;
+  grid-row-start: menu-end;
+  grid-row-end: subtitle-end;
+  background: white url(../images/ChoirCropped.jpg) top center/100%;
+}
+
+h2 {
+  font-size: 4rem;
+  vertical-align: center;
+  color: white;
+  font-family: "You are loved";
+  font-weight: normal;
+  padding-top: 1rem;
+  text-align: center;
+  letter-spacing: 0.3rem;
+}
+
+section.cta {
+  margin: 5rem 0;
+  border-radius: 4px;
+  background: white url(../images/shoulders.jpg) top center/100%;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+section.cta .pure-button {
+  font-weight: bold;
+  margin: 2rem;
+  font-size: 2rem;
+}
+
+section.cta div {
+  margin: 0 0 2rem 0;
+}
+
+section.cta h3 {
+  margin: 3rem 0 6rem 0;
+  padding: 0;
+  font-size: 6rem;
+  background: none;
+}
+
+section#body {
+  grid-row-start: subtitle-end;
+  grid-row-end: footer-start;
+  grid-column-start: content-start;
+  grid-column-end: content-end;
+}
+
+section#body img {
+  max-width: 50%;
+  height: auto !important;
+  width: auto;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  grid-row-start: footer-start;
+  grid-row-end: footer-end;
+  grid-column-start: page-start;
+  box-shadow: -2px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  grid-column-end: page-end;
+  padding: 1rem 4rem;
+}
