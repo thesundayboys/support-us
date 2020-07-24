@@ -15,7 +15,6 @@
   --clef-width: calc(86px * 0.8);
   --logo-height: calc(193px / 2);
   --logo-width: calc(320px / 2);
-  --gutter-size: auto;
   --header-height: var(--logo-height);
   --subtitle-height: 15rem;
   --footer-height: 2rem;
@@ -29,9 +28,8 @@ body {
   padding: 0;
 
   grid-template-columns:
-    [page-start] var(--gutter-size) [content-start] 50% [content-end] var(
-      --gutter-size
-    )
+    [page-start] auto [content-start] 50% [content-end]
+    auto
     [page-end];
 
   grid-template-rows:
@@ -44,6 +42,7 @@ body {
 p {
   line-height: 2.7rem;
   margin: 0.3rem 0 1rem 0;
+  font-size: 1.4rem;
 }
 
 h1,
@@ -124,7 +123,7 @@ header h1 {
 
 h2 {
   font-size: 4rem;
-  vertical-align: center;
+  vertical-align: middle;
   color: white;
   font-family: "You are loved";
   font-weight: normal;
@@ -140,7 +139,6 @@ section.cta {
   color: white;
   text-align: center;
   padding: 1rem;
-  width: 100%;
 }
 
 section.cta .pure-button {
@@ -184,4 +182,33 @@ footer {
   box-shadow: -2px 0px 5px 0px rgba(0, 0, 0, 0.75);
   grid-column-end: page-end;
   padding: 1rem 4rem;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  h3 {
+    font-size: 2rem;
+    background-size: calc(var(--clef-height) * 0.7);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    grid-template-columns:
+      [page-start] 2rem [content-start] auto [content-end] 2rem
+      [page-end];
+  }
+
+  section.cta {
+    font-size: 0.8rem;
+  }
+
+  section.cta h3 {
+    font-size: 2rem;
+    margin: 1rem 0 1rem 0;
+  }
+
+  section.cta .pure-button {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+  }
 }
