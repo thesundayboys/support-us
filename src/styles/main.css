@@ -86,8 +86,7 @@ header nav {
 header nav ul {
   display: flex;
   justify-content: center;
-  width: 100%;
-  margin: 0;
+  width: calc(100% - var(--logo-width));
   padding: 0 0 0 var(--logo-width);
 }
 
@@ -106,6 +105,7 @@ header nav ul li a {
 
 header h1 {
   width: var(--logo-width);
+  min-width: var(--logo-width);
   height: var(--logo-height);
   background: white url(../images/TSB-Block.jpg) left top/100% no-repeat;
   text-indent: 100%;
@@ -118,7 +118,7 @@ header h1 {
   grid-column-end: page-end;
   grid-row-start: menu-end;
   grid-row-end: subtitle-end;
-  background: white url(../images/ChoirCropped.jpg) top center/100%;
+  background: white url(../images/ChoirCropped.jpg) top center/100% no-repeat;
 }
 
 h2 {
@@ -135,7 +135,7 @@ h2 {
 section.cta {
   margin: 5rem 0;
   border-radius: 4px;
-  background: white url(../images/shoulders.jpg) top center/100%;
+  background: white url(../images/shoulders.jpg) top center/100% no-repeat;
   color: white;
   text-align: center;
   padding: 1rem;
@@ -152,7 +152,7 @@ section.cta div {
 }
 
 section.cta h3 {
-  margin: 3rem 0 6rem 0;
+  margin: 1rem 0 6rem 0;
   padding: 0;
   font-size: 6rem;
   background: none;
@@ -184,14 +184,37 @@ footer {
   padding: 1rem 4rem;
 }
 
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-  h3 {
-    font-size: 2rem;
-    background-size: calc(var(--clef-height) * 0.7);
+@media only screen and (max-width: 1400px) {
+  section.cta h3 {
+    font-size: 4rem;
+    margin: 1rem 0 2rem 0;
+  }
+
+  section.cta .pure-button {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+  }
+
+  section.cta {
+    font-size: 0.8rem;
+    margin: 2rem 0;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
+  h3 {
+    font-size: 2rem;
+    height: calc(var(--clef-height) * 0.7);
+    background-size: calc(var(--clef-height) * 0.7);
+    padding: 0 0 0 calc((var(--clef-width) * 0.7) + 0.5rem);
+    margin: 1rem 0 0 0;
+  }
+
+  p {
+    line-height: 2.2rem;
+    margin: 0 0 1rem 0;
+  }
+
   body {
     grid-template-columns:
       [page-start] 2rem [content-start] auto [content-end] 2rem
