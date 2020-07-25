@@ -1,2 +1,2 @@
 deploy:
-	aws s3 sync ./src s3://sundayboys/support-us
+	aws s3 sync --acl public-read ./src s3://sundayboys/support-us
