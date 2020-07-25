@@ -115,11 +115,17 @@ header h1 {
 }
 
 #subtitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   grid-column-start: page-start;
   grid-column-end: page-end;
   grid-row-start: menu-end;
   grid-row-end: subtitle-end;
   background: white url(../images/ChoirCropped.jpg) top center/100% no-repeat;
+  height: 100%;
+  width: 100%;
 }
 
 h2 {
@@ -128,13 +134,12 @@ h2 {
   color: white;
   font-family: "You are loved";
   font-weight: normal;
-  padding-top: 1rem;
   text-align: center;
   letter-spacing: 0.3rem;
 }
 
 section.cta {
-  margin: 3rem 0;
+  margin: 1rem 0;
   border-radius: 4px;
   background: white url(../images/shoulders-light.jpg) top center/100% no-repeat;
   color: white;
@@ -203,7 +208,6 @@ footer {
 
   section.cta {
     font-size: 0.8rem;
-    margin: 2rem 0;
   }
 }
 
